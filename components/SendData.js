@@ -8,7 +8,7 @@ class SendData {
     const mail = document.querySelector(".form-control").value;
     const info = document.querySelector(".info").value;
 
-    this.data = {
+    const data = {
       mail: `eMail otrzymany od: ${mail}`,
       info: `Treść wiadomości: ${info}`,
     };
@@ -18,7 +18,7 @@ class SendData {
       headres: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.data),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((res) => {
